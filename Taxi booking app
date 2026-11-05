@@ -1,1 +1,159 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas Caps - One Touch With You</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff8ef;
+      color: #263238;
+    }
+
+    header {
+      background: #f28c28;
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      text-align: center;
+      color: #e87918;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px;
+      margin-top: 7px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      background: #f28c28;
+      color: white;
+      border: none;
+      border-radius: 9px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #d96f12;
+    }
+
+    #message {
+      margin-top: 18px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🚕 Atlas Caps</h1>
+    <p>One Touch With You</p>
+  </header>
+
+  <div class="container">
+    <h2>Book Your Ride</h2>
+
+    <form id="bookingForm">
+
+      <label for="pickup">Pickup Location</label>
+      <input
+        type="text"
+        id="pickup"
+        placeholder="Enter pickup location"
+        required
+      >
+
+      <label for="drop">Drop Location</label>
+      <input
+        type="text"
+        id="drop"
+        placeholder="Enter destination"
+        required
+      >
+
+      <label for="taxi">Choose Your Taxi</label>
+      <select id="taxi">
+        <option>Mini</option>
+        <option>Sedan</option>
+        <option>SUV</option>
+      </select>
+
+      <button type="submit">Book Now</button>
+
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <footer>
+    © 2026 Atlas Caps. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("bookingForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const pickup = document.getElementById("pickup").value;
+        const drop = document.getElementById("drop").value;
+        const taxi = document.getElementById("taxi").value;
+
+        document.getElementById("message").innerHTML =
+          "Your demo booking details:<br>" +
+          "Pickup: " + pickup + "<br>" +
+          "Destination: " + drop + "<br>" +
+          "
